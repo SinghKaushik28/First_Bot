@@ -494,7 +494,7 @@ async def join(ctx, *, channel_name: str = None):
     """Join a voice channel by name or the user's current voice channel if not specified"""
     
     # Optional: Restrict to your Discord ID
-    if ctx.author.id != 772331428385390633:
+    if ctx.author.id != KAUSH:
         await ctx.send("You are not allowed to use this command.")
         return
 
@@ -899,5 +899,6 @@ async def poll(ctx, duration: int, *, question_and_options):
 
 # Run the bot
 bot.run(TOKEN, log_handler=handler, log_level=logging.DEBUG)
+
 
 
