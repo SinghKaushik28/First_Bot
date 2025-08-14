@@ -14,7 +14,6 @@ import pyttsx3
 import speech_recognition as sr
 import threading
 from discord.ext import commands
-from keep_alive import keep_alive
 
 
 load_dotenv()
@@ -26,7 +25,6 @@ VEDAANT = os.getenv('DISCORD_VEDAANT')
 ADARSH = os.getenv('DISCORD_ADARSH')
 
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
-keep_alive()
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -901,4 +899,5 @@ async def poll(ctx, duration: int, *, question_and_options):
 
 # Run the bot
 bot.run(TOKEN, log_handler=handler, log_level=logging.DEBUG)
+
 
