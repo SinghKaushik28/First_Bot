@@ -33,15 +33,12 @@ bot = commands.Bot(command_prefix='*', intents=intents)
 # ===== Configuration =====
 
 secret_role_name = "Gamer"
-kaush_user_id = 772331428385390633  # Replace with actual Kaush ID
+kaush_user_id = 12345646484412  # Replace with actual Kaush ID
 CODE_CORRECTION_CHANNEL_ID = 123456789012345678  # Replace with your code correction channel ID
 
 mention_user_ids = [
-    772331428385390633,  # Kaush
-    1274665281272287335,
-    541221643264196623,
-    807635439842230313,
-    748490471147438110,
+    2132154654132122135,  # Kaush
+    5464121215464154645,
 ]
 
 # Abuse words (English + Hindi + short forms)
@@ -696,10 +693,10 @@ async def on_message(message):
         return
 
     content_lower = message.content.lower()
-    mentions_kaush = any(u.id == 772331428385390633 for u in message.mentions)
+    mentions_kaush = any(u.id == 44545475658454for u in message.mentions)
 
     # If Kaush replies, cancel pending timer
-    if message.author.id == 772331428385390633:
+    if message.author.id == 45688972203365:
         ch_id = message.channel.id
         if ch_id in pending_mentions:
             del pending_mentions[ch_id]
@@ -714,7 +711,7 @@ async def on_message(message):
         else:
             # Case B – Non-abusive mention → set pending "I will be late" or offline msg
             guild = message.guild
-            kaush_member = guild.get_member(772331428385390633)
+            kaush_member = guild.get_member(558754114548874451)
             if kaush_member:
                 if kaush_member.status != discord.Status.offline:
                     ch_id = message.channel.id
@@ -886,3 +883,4 @@ async def poll(ctx, duration: int, *, question_and_options):
 
 # Run the bot
 bot.run(TOKEN, log_handler=handler, log_level=logging.DEBUG)
+
